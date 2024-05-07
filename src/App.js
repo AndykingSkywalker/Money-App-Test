@@ -6,6 +6,7 @@ import React from 'react';
 import Booking from './Components/Bookings/Booking';
 import NavigationBar from './Components/Navbar/Navbar';
 import Budget from './Components/Budget/Budget';
+import VideoMessage from './Components/VideoMessage/VideoMessage';
 
 
 
@@ -19,7 +20,8 @@ function App() {
      <NavigationBar/>
       <Routes>
     <Route path='/Booking' element={<Booking/>} />
-    <Route path='/Budget' element={<Budget/>} />    
+    <Route path='/Budget' element={<Budget/>} />
+    <Route path="/videomessages" element={<VideoMessage />} />    
 
       </Routes>
     </Router>
