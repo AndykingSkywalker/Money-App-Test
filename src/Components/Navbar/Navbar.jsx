@@ -37,7 +37,7 @@ function NavigationBar() {
               <Nav className="me-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/Booking">Booking</Nav.Link>
-                <Nav.Link href="/Portfolio">Portfolio</Nav.Link>
+                <Nav.Link href="/budget">Budget Tool</Nav.Link>
                 <Nav.Link href="/MessageBoard">Message Board</Nav.Link>
                 <Nav.Link href="/PokeSearch">Pokemon Generator</Nav.Link>
               </Nav>
