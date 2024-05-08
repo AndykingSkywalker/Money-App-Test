@@ -6,7 +6,7 @@ export const lightTheme = {
 }
 
 export const darkTheme = {
-    body: '#191a24',
+    body: '#2c041c',
     fontColor: '#FFFFFF'
 }
 
