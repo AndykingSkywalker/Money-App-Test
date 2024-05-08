@@ -3,10 +3,9 @@ import { Form, Button, Table, Container, Modal } from 'react-bootstrap';
 
 const Booking = () => {
     const [name, setName] = useState('');
+    const [specialism, setSpecialism] = useState('');
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
-    const [specialism, setSpecialism] = useState('');
-
     const [bookings, setBookings] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [currentBooking, setCurrentBooking] = useState(null);
@@ -14,7 +13,10 @@ const Booking = () => {
     const handleNameChange = (e) => {
         setName(e.target.value);
     };
-
+    const handleSpecialismChange = (e) => {
+        setSpecialism(e.target.value);
+    };
+    
     const handleDateChange = (e) => {
         setDate(e.target.value);
     };
@@ -27,6 +29,7 @@ const Booking = () => {
         e.preventDefault();
         const newBooking = {
             name,
+            specialism,
             date,
             time,
         };
@@ -69,10 +72,7 @@ const Booking = () => {
         'Other'
     ];
 
-    const handleSpecialismChange = (e) => {
-        setSpecialism(e.target.value);
-    };
-    
+   
 
     return (
         <Container>
@@ -82,7 +82,7 @@ const Booking = () => {
                     <Form.Control type="text" value={name} onChange={handleNameChange} />
                 </Form.Group>
                 <Form.Group controlId="specialism">
-<Form.Label>specialism</Form.Label>
+<Form.Label>Specialism:</Form.Label>
 <Form.Control
                         as="select"
                         value={specialism}
