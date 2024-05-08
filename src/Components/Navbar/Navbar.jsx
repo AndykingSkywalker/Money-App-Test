@@ -21,7 +21,7 @@ function NavigationBar() {
     theme === 'light' ? setTheme("dark") : setTheme("light");
   };
 
-  if (location.pathname === "/LoginPage") {
+  if (location.pathname === "/login") {
     return null;
   }
 

@@ -47,7 +47,7 @@ const Login = () => {
                 </Form.Control.Feedback>
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" href="/home">
                 Log In
             </Button>
         </Form>
