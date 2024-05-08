@@ -5,6 +5,8 @@ const Booking = () => {
     const [name, setName] = useState('');
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
+    const [specialism, setSpecialism] = useState('');
+
     const [bookings, setBookings] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [currentBooking, setCurrentBooking] = useState(null);
@@ -36,6 +38,8 @@ const Booking = () => {
     const handleCloseModal = () => {
         setShowModal(false);
         setName('');
+    setSpecialism('');
+
         setDate('');
         setTime('');
         setCurrentBooking(null);
@@ -52,6 +56,23 @@ const Booking = () => {
         const bookedTimes = bookings.filter(booking => booking.date === date).map(booking => booking.time);
         return times.filter(time => !bookedTimes.includes(time));
     };
+    const specialisms = [
+        'Debt Management',
+        'Mortgage Advice',
+        'Pension Advice',
+        'Investment Advice',
+        'Tax Planning',
+        'Retirement Planning',
+        'Estate Planning',
+        'Insurance Advice',
+        'Savings Advice',
+        'Other'
+    ];
+
+    const handleSpecialismChange = (e) => {
+        setSpecialism(e.target.value);
+    };
+    
 
     return (
         <Container>
@@ -60,6 +81,23 @@ const Booking = () => {
                     <Form.Label>Name:</Form.Label>
                     <Form.Control type="text" value={name} onChange={handleNameChange} />
                 </Form.Group>
+                <Form.Group controlId="specialism">
+<Form.Label>specialism</Form.Label>
+<Form.Control
+                        as="select"
+                        value={specialism}
+                        onChange={(e) => setSpecialism(e.target.value)}
+ 
+                    >
+<option value="">Select a specialism </option>
+                        {specialisms.map((specialism) => (
+<option key={specialism} value={specialism}>
+                                {specialism}
+                                {/* {isBooked} */}
+</option>
+                        ))}
+</Form.Control>
+</Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label>Date:</Form.Label>
                     <Form.Control type="date" value={date} onChange={handleDateChange} />
@@ -82,6 +120,8 @@ const Booking = () => {
                     </Modal.Header>
                     <Modal.Body>
                         <p>Name: {currentBooking.name}</p>
+                        <p>Specialism: {currentBooking.specialism}</p>
+
                         <p>Date: {currentBooking.date}</p>
                         <p>Time: {currentBooking.time}</p>
                     </Modal.Body>
@@ -96,9 +136,11 @@ const Booking = () => {
             <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Specialism</th>
                     <th>Date</th>
                     <th>Time</th>
                     <th>Action</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -108,6 +150,8 @@ const Booking = () => {
                     return (
                         <tr key={index}>
                             <td>{booking.name}</td>
+                            <td>{booking.specialism}</td>
+
                             <td>{formattedDate}</td>
                             <td>{booking.time}</td>
                             <td>

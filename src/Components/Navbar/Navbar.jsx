@@ -41,7 +41,6 @@ function NavigationBar() {
                 <Nav.Link href="/expenses">Expenses Tracker</Nav.Link>
 
                 <Nav.Link href="/videomessages">Video Messages</Nav.Link>
-                <Nav.Link href="/PokeSearch">Pokemon Generator</Nav.Link>
               </Nav>
               <Button variant="outline-secondary" onClick={themeToggler}>
                 {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
