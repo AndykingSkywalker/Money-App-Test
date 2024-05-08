@@ -38,6 +38,8 @@ function NavigationBar() {
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/Booking">Booking</Nav.Link>
                 <Nav.Link href="/budget">Budget Tool</Nav.Link>
+                <Nav.Link href="/expenses">Expenses Tracker</Nav.Link>
+
                 <Nav.Link href="/videomessages">Video Messages</Nav.Link>
                 <Nav.Link href="/PokeSearch">Pokemon Generator</Nav.Link>
               </Nav>
