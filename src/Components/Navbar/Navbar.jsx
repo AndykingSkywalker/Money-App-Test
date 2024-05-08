@@ -35,11 +35,11 @@ function NavigationBar() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/Home">Home</Nav.Link>
                 <Nav.Link href="/Booking">Booking</Nav.Link>
                 <Nav.Link href="/budget">Budget Tool</Nav.Link>
                 <Nav.Link href="/expenses">Expenses Tracker</Nav.Link>
-
+                
                 <Nav.Link href="/videomessages">Video Messages</Nav.Link>
               </Nav>
               <Button variant="outline-secondary" onClick={themeToggler}>
