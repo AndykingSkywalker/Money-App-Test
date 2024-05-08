@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Button, Table, Container, Modal } from 'react-bootstrap';
+import axios from 'axios';
 
 const Booking = () => {
     const [name, setName] = useState('');
@@ -9,6 +10,22 @@ const Booking = () => {
     const [bookings, setBookings] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [currentBooking, setCurrentBooking] = useState(null);
+    const [specialists, setSpecialists] = useState([]);
+    const [selectedSpecialist, setSelectedSpecialist] = useState('');
+
+    useEffect(() => {
+        const fetchPokemon = async () => {
+            let pokemonList = [];
+            for (let i = 0; i < 6; i++) {
+                const randomId = Math.floor(Math.random() * 800) + 1; // Pokemon API currently goes up to 898
+                const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+                pokemonList.push(res.data.name);
+            }
+            setSpecialists(pokemonList);
+        };
+
+        fetchPokemon();
+    }, []);
 
     const handleNameChange = (e) => {
         setName(e.target.value);
@@ -32,6 +49,7 @@ const Booking = () => {
             specialism,
             date,
             time,
+            specialists: selectedSpecialist,
         };
         setBookings([...bookings, newBooking]);
         setCurrentBooking(newBooking);
@@ -42,7 +60,7 @@ const Booking = () => {
         setShowModal(false);
         setName('');
     setSpecialism('');
-
+        setSelectedSpecialist(''); 
         setDate('');
         setTime('');
         setCurrentBooking(null);
@@ -98,6 +116,21 @@ const Booking = () => {
                         ))}
 </Form.Control>
 </Form.Group>
+<Form.Group controlId="specialism">
+            <Form.Label>Specialists:</Form.Label>
+            <Form.Control
+                as="select"
+                value={selectedSpecialist}
+                onChange={(e) => setSelectedSpecialist(e.target.value)}
+            >
+                <option value="">Select a specialist </option>
+                {specialists.map((specialist) => (
+                    <option key={specialist} value={specialist}>
+                        {specialist}
+                    </option>
+                ))}
+            </Form.Control>
+        </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label>Date:</Form.Label>
                     <Form.Control type="date" value={date} onChange={handleDateChange} />
@@ -121,7 +154,7 @@ const Booking = () => {
                     <Modal.Body>
                         <p>Name: {currentBooking.name}</p>
                         <p>Specialism: {currentBooking.specialism}</p>
-
+                        <p>Specialist: {currentBooking.specialists}</p>
                         <p>Date: {currentBooking.date}</p>
                         <p>Time: {currentBooking.time}</p>
                     </Modal.Body>
@@ -137,6 +170,7 @@ const Booking = () => {
                 <tr>
                     <th>Name</th>
                     <th>Specialism</th>
+                    <th>Specialist</th>
                     <th>Date</th>
                     <th>Time</th>
                     <th>Action</th>
@@ -151,7 +185,7 @@ const Booking = () => {
                         <tr key={index}>
                             <td>{booking.name}</td>
                             <td>{booking.specialism}</td>
-
+                            <td>{booking.specialists}</td>
                             <td>{formattedDate}</td>
                             <td>{booking.time}</td>
                             <td>
