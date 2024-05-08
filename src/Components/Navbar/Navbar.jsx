@@ -21,7 +21,7 @@ function NavigationBar() {
     theme === 'light' ? setTheme("dark") : setTheme("light");
   };
 
-  if (location.pathname === "/LoginPage") {
+  if (location.pathname === "/login") {
     return null;
   }
 
@@ -35,12 +35,26 @@ function NavigationBar() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
+
                 <Nav.Link href="/Home">Home</Nav.Link>
                 <Nav.Link href="/Booking">Booking</Nav.Link>
                 <Nav.Link href="/budget">Budget Tool</Nav.Link>
                 <Nav.Link href="/expenses">Expenses Tracker</Nav.Link>
                 
                 <Nav.Link href="/videomessages">Video Messages</Nav.Link>
+
+              <Nav.Link href="/login">Login</Nav.Link>
+      
+               
+                <Nav.Link href="/savingsCalculator">Savings Calculator</Nav.Link>
+
+                
+                <Nav.Link href="/MortgageCalculator">Mortgage Calculator</Nav.Link>
+                <Nav.Link href="/contactUs">Contact Us</Nav.Link>
+
+            
+
+
               </Nav>
               <Button variant="outline-secondary" onClick={themeToggler}>
                 {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
