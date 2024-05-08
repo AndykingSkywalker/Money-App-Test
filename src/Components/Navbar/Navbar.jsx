@@ -44,6 +44,7 @@ function NavigationBar() {
 
                 
                 <Nav.Link href="/MortgageCalculator">Mortgage Calculator</Nav.Link>
+                <Nav.Link href="/contactUs">Contact Us</Nav.Link>
 
               <Nav.Link href="/videomessages">Video Messages</Nav.Link>
 
