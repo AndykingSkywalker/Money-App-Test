@@ -23,10 +23,45 @@ const Booking = () => {
             }
             setSpecialists(pokemonList);
         };
+        
 
         fetchPokemon();
     }, []);
+    useEffect(() => {
+    const GetBookings = async () => {
+        try {
+            const response = await axios.get('http://localhost:8085/booking/get');
+            setBookings(response.data);
+        } catch (error) {
+            console.error('Error fetching bookings:', error);
+        }
+    
+    };
+    GetBookings();}, []);
 
+    
+    const handleSubmittwo = async (e) => {
+        e.preventDefault();
+        const newBooking = {
+            name,
+            specialism,
+            specialists: selectedSpecialist,
+            date,
+            time,
+        };
+    
+        try {
+            await axios.post('http://localhost:8085/booking/create', newBooking);
+        
+            setBookings([...bookings, newBooking]);
+            setCurrentBooking(newBooking);
+            setShowModal(true);
+            console.log("posted")
+        } catch (error) {
+            console.error('Error creating booking:', error);
+            
+        }
+    };
     const handleNameChange = (e) => {
         setName(e.target.value);
     };
@@ -144,7 +179,7 @@ const Booking = () => {
                     ))}
                 </Form.Select>
             </Form.Group>
-                <Button variant="primary" type="submit">Submit</Button>
+                <Button onClick={handleSubmittwo} variant="primary" type="submit">Submit</Button>
             </Form>
             {currentBooking && (
                 <Modal style={{color: "black"}} show={showModal} onHide={handleCloseModal}>
