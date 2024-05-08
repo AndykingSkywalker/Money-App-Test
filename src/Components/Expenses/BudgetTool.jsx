@@ -6,13 +6,13 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const BudgetTool = () => {  const [salary, setSalary] = useState(0);
-  const [householdBills, setHouseholdBills] = useState(0);
-  const [livingCosts, setLivingCosts] = useState(0);
-  const [financeInsurance, setFinanceInsurance] = useState(0);
-  const [familyFriends, setFamilyFriends] = useState(0);
-  const [travel, setTravel] = useState(0);
-  const [leisure, setLeisure] = useState(0);
+const BudgetTool = () => {  const [salary, setSalary] = useState("");
+  const [householdBills, setHouseholdBills] = useState("");
+  const [livingCosts, setLivingCosts] = useState("");
+  const [financeInsurance, setFinanceInsurance] = useState("");
+  const [familyFriends, setFamilyFriends] = useState("");
+  const [travel, setTravel] = useState("");
+  const [leisure, setLeisure] = useState("");
 
   const calculateSurplus = () => {
     const totalExpenses =
@@ -207,7 +207,7 @@ const BudgetTool = () => {  const [salary, setSalary] = useState(0);
          
          Get financial help ! Book an appoitment with one of our specialist <Link to="/Booking">Book Now</Link>
          <br />
-          <Link to="/savings">Savings calculator</Link>
+          <Link to="/savingsCalculator">Savings calculator</Link>
         </Col>
       </Row>
     </div>

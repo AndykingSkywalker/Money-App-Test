@@ -39,8 +39,11 @@ function NavigationBar() {
                 <Nav.Link href="/Booking">Booking</Nav.Link>
                 <Nav.Link href="/budget">Budget Tool</Nav.Link>
                 <Nav.Link href="/expenses">Expenses Tracker</Nav.Link>
+                <Nav.Link href="/savingsCalculator">Savings Calculator</Nav.Link>
 
                 <Nav.Link href="/videomessages">Video Messages</Nav.Link>
+                <Nav.Link href="/contactUs">Contact Us</Nav.Link>
+
               </Nav>
               <Button variant="outline-secondary" onClick={themeToggler}>
                 {theme === 'light' ? 'Dark Mode' : 'Light Mode'}

@@ -8,8 +8,8 @@ import NavigationBar from './Components/Navbar/Navbar';
 import Budget from './Components/Budget/Budget';
 import VideoMessage from './Components/VideoMessage/VideoMessage';
 import Expenses from "./Components/Expenses/BudgetTool"
-
-
+import ContactUs from "./Components/Contact/ContactUS"
+import SavingsCalculator from "./Components/Savings/Savings";
 
 function App() {
 
@@ -23,6 +23,8 @@ function App() {
     <Route path='/Budget' element={<Budget/>} />
     <Route path="/videomessages" element={<VideoMessage />} />    
     <Route path="/expenses" element={<Expenses />} />    
+    <Route path="/contactUs" element={<ContactUs />} />    
+    <Route path="/savingsCalculator" element={<SavingsCalculator />} />    
 
 
       </Routes>
