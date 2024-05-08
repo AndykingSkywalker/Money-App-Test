@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Container, Form, Button } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Container, Form, Button, Table } from 'react-bootstrap';
 import axios from 'axios';
 
 const TransactionsAdmin = () => {
@@ -7,6 +7,18 @@ const TransactionsAdmin = () => {
     const [category, setCategory] = useState('');
     const [price, setPrice] = useState('');
     const [transactions, setTransactions] = useState([]);
+
+    useEffect(() => {
+        const GetTransactions = async () => {
+            try {
+                const response = await axios.get('http://localhost:8085/transaction/get');
+                setTransactions(response.data);
+            } catch (error) {
+                console.error('Error fetching transactions:', error);
+            }
+        
+        };
+        GetTransactions();}, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -42,6 +54,16 @@ const TransactionsAdmin = () => {
     const handlePriceChange = (e) => {
         setPrice(e.target.value);
     };
+
+    const handleDelete = async (id) => {
+        try {
+            await axios.delete(`http://localhost:8085/transaction/delete/${id}`);
+            setTransactions(transactions.filter((transaction) => transaction.id !== id));
+        } catch (error) {
+            console.error('Error deleting transaction:', error);
+        }
+    };
+
     return (
         <div>
             <Container>
@@ -58,16 +80,19 @@ const TransactionsAdmin = () => {
                         <Form.Label>Price:</Form.Label>
                         <Form.Control type="text" value={price} onChange={handlePriceChange} />
                     </Form.Group>
+                    <br />
                     <Button variant="primary" type="submit">Create Transaction</Button>
                 </Form>
             </Container>
-            <table>
+            <br />
+            <Table striped bordered hover>
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
                         <th>Category</th>
                         <th>Price</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -78,10 +103,13 @@ const TransactionsAdmin = () => {
                             <td>{transaction.name}</td>
                             <td>{transaction.category}</td>
                             <td>{transaction.price}</td>
+                            <td>
+                            <Button variant="danger" onClick={() => handleDelete(transaction.id)}>Delete</Button>
+                        </td>
                         </tr>
                     ))}
                 </tbody>
-            </table>
+            </Table>
         </div>
     );
 };
