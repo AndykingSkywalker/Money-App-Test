@@ -5,6 +5,7 @@ import axios from 'axios';
 const HomePage = () => {
     const [randomItem, setRandomItem] = useState(null);
     const [expanded, setExpanded] = useState(false);
+    const [transactions, setTransactions] = useState([]);
     useEffect(() => {
         const fetchRandomItem = async () => {
             const response = await axios.get('https://fakestoreapi.com/products');
@@ -15,6 +16,18 @@ const HomePage = () => {
 
         fetchRandomItem();
     }, []);
+
+    useEffect(() => {
+        const GetTransactions = async () => {
+            try {
+                const response = await axios.get('http://localhost:8085/transaction/get');
+                setTransactions(response.data);
+            } catch (error) {
+                console.error('Error fetching transactions:', error);
+            }
+        
+        };
+        GetTransactions();}, []);
 
     const price = Math.floor(Math.random() * 100) + 1;
 
@@ -56,7 +69,9 @@ const HomePage = () => {
                     <Card>
                         <Card.Body>
                             <Card.Title>Transactions</Card.Title>
-                            {/* Add your transaction components here */}
+                            <Card.Text>{transactions.name}</Card.Text>
+                            <Card.Text>{transactions.category}</Card.Text>
+                            <Card.Text>{transactions.price}</Card.Text>
                         </Card.Body>
                     </Card>
                 </Container>
