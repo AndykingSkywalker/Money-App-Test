@@ -46,6 +46,7 @@ function NavigationBar() {
                 <Nav.Link href="/MortgageCalculator">Mortgage Calculator</Nav.Link>
 
               <Nav.Link href="/videomessages">Video Messages</Nav.Link>
+
               </Nav>
               <Button variant="outline-secondary" onClick={themeToggler}>
                 {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
