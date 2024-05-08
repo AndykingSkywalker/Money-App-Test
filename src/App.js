@@ -7,11 +7,17 @@ import Booking from './Components/Bookings/Booking';
 import NavigationBar from './Components/Navbar/Navbar';
 import Budget from './Components/Budget/Budget';
 import VideoMessage from './Components/VideoMessage/VideoMessage';
+
 import Expenses from "./Components/Expenses/BudgetTool";
 import ContactUs from "./Components/Contact/ContactUS";
 import SavingsCalculator from "./Components/Savings/Savings";
 import MortgageCal from "./Components/Budget/MortgageCal";
 import Login from "./Components/Login/Login";
+
+
+import HomePage from './Components/HomePage/homepage';
+import TransactionsAdmin from './Components/Transactions/TransactionsAdmin';
+
 
 
 function App() {
@@ -23,6 +29,8 @@ function App() {
      <NavigationBar/>
       <Routes>
       <Route path='/Login' element={<Login/>} />
+    <Route path='/transactionsadmin' element={<TransactionsAdmin/>} />
+    <Route path='/Home' element={<HomePage/>} />
     <Route path='/Booking' element={<Booking/>} />
     <Route path='/Budget' element={<Budget/>} />
     <Route path="/videomessages" element={<VideoMessage />} />    
