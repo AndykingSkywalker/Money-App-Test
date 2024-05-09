@@ -51,13 +51,13 @@ const Login = () => {
                     placeholder="Enter password"
                     value={password}
                     onChange={handlePasswordChange}
-                    isInvalid={!passwordValid}
+                    // isInvalid={!passwordValid}
                 />
-                <Form.Control.Feedback type="invalid">
+                {/* <Form.Control.Feedback type="invalid">
                     Password must be 8-12 characters long.
-                </Form.Control.Feedback>
+                </Form.Control.Feedback> */}
             </Form.Group>
-
+<br/>
             <Button style={{
                  backgroundColor: '#a87388', 
                  border: 'none',
