@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { Table, Form, Button } from 'react-bootstrap';
+import { Table, Form, Button, Card,
+    Row,
+    Col, } from 'react-bootstrap';
 
+    
 const Savings = () => {
     const [monthlySavings, setMonthlySavings] = useState(0);
     const [interestRate, setInterestRate] = useState(0);
@@ -26,6 +29,10 @@ const Savings = () => {
 
     return (
         <div>
+               <Row>
+        <Col md={6} className="mx-auto">
+
+        <Card className="login-card">
             <Form>
                 <Form.Group controlId="monthlySavings">
                     <Form.Label>Monthly Savings Amount</Form.Label>
@@ -51,16 +58,20 @@ const Savings = () => {
                     Calculate
                 </Button>
             </Form>
-
+            </Card>
+            </Col>
+            </Row>
+            <Col md={6} className="mx-auto">
+<br />
             <Table striped bordered hover>
-                <thead>
+            <thead             className="mb-4 text-center">
                     <tr>
                         <th>Month</th>
                         <th>Savings Amount</th>
                         <th>Interest</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody             className="mb-4 text-center">
                     {savingsData.map((data) => (
                         <tr key={data.month}>
                             <td>{data.month}</td>
@@ -70,6 +81,7 @@ const Savings = () => {
                     ))}
                 </tbody>
             </Table>
+            </Col>
         </div>
     );
 };

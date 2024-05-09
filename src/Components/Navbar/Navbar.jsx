@@ -1,24 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Navbar, Nav, Container, Button } from 'react-bootstrap';
-import { lightTheme, darkTheme, GlobalStyles } from '../../themes';
-import styled, {ThemeProvider} from 'styled-components';
+import { Navbar, Nav, Container, Button, NavDropdown } from "react-bootstrap";
+import { lightTheme, darkTheme, GlobalStyles } from "../../themes";
+import styled, { ThemeProvider } from "styled-components";
+import Switch from 'react-switch';
+import { GrContact } from "react-icons/gr";
+import Logo from "../../Images/TAMPA.png"
+
+
 
 const StyledApp = styled.div`
-color: ${(props) => props.theme.fontColor}`;
+  color: ${(props) => props.theme.fontColor};
+`;
 
 function NavigationBar() {
   const location = useLocation();
 
-  const [theme, setTheme] = useState(() => 
-    window.localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState(
+    () => window.localStorage.getItem("theme") || "light"
+  );
 
   useEffect(() => {
-    window.localStorage.setItem('theme', theme);
+    window.localStorage.setItem("theme", theme);
   }, [theme]);
 
-  const themeToggler= () => {
-    theme === 'light' ? setTheme("dark") : setTheme("light");
+  const themeToggler = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
   if (location.pathname === "/login") {
@@ -26,32 +33,54 @@ function NavigationBar() {
   }
 
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      <GlobalStyles/>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <GlobalStyles />
       <StyledApp>
-        <Navbar bg="light" expand="lg">
-          <Container>
-            <Navbar.Brand href="/">Tampa</Navbar.Brand>
+        <Navbar bg="light" expand="lg" >
+          <Container               checked={theme === 'dark'}
+>
+            <Navbar.Brand href="/">< img src={Logo} alt="logo" width="90" height="50"/></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-              <Nav.Link href="/login">Login</Nav.Link>
+                <Nav.Link href="/login">Login</Nav.Link>
                 <Nav.Link href="/Home">Home</Nav.Link>
                 <Nav.Link href="/Booking">Booking</Nav.Link>
-                <Nav.Link href="/budget">Budget Tool</Nav.Link>
-                <Nav.Link href="/expenses">Expenses Tracker</Nav.Link>
-                <Nav.Link href="/savingsCalculator">Savings Calculator</Nav.Link>
+                <NavDropdown title="Budget Planner" id="basic-nav-dropdown">
+                  <NavDropdown.Item href="/budget">
+                  Budget Tool                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/expenses">
+                  Expenses Tracker                  </NavDropdown.Item>
+                </NavDropdown>
+               
 
-                
-                <Nav.Link href="/MortgageCalculator">Mortgage Calculator</Nav.Link>
-                <Nav.Link href="/contactUs">Contact Us</Nav.Link>
-                
-              <Nav.Link href="/videomessages">Video Messages</Nav.Link>
+                <NavDropdown title="Calculators" id="basic-nav-dropdown">
+                  <NavDropdown.Item href="/savingsCalculator">
+                    Savings Calculator
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/MortgageCalculator">
+                    Mortgage Calculator
+                  </NavDropdown.Item>
+                </NavDropdown>
 
+                <Nav.Link href="/videomessages">Video Messages</Nav.Link>
               </Nav>
-              <Button variant="outline-secondary" onClick={themeToggler}>
-                {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-              </Button>
+
+              <Nav.Link href="/contactUs">Contact Us <GrContact />
+</Nav.Link>
+
+              &emsp;               <Switch
+              onChange={themeToggler}
+              checked={theme === 'dark'}
+              onColor="#86d3ff"
+              onHandleColor="#2693e6"
+              handleDiameter={30}
+              uncheckedIcon={false}
+              checkedIcon={false}
+              boxShadow="0px 1px 1px rgba(0, 0, 0, 0.6)"
+              height={20}
+              width={48}
+            />
             </Navbar.Collapse>
           </Container>
         </Navbar>

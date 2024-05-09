@@ -14,9 +14,13 @@ const Budget = () => {
 
     return (
         <Container>
-            <h2>Budgeting Component</h2>
+            <Card className="login-card">
 
             <Form>
+            <h4
+            className="mb-4 text-center"
+          >
+Budgeting Component          </h4> 
                 <Form.Group controlId="savingsGoal">
                     <Form.Label>Savings Goal:</Form.Label>
                     <Form.Control
@@ -43,6 +47,7 @@ const Budget = () => {
                     />
                 </Form.Group>
             </Form>
+            </Card>
             <br />
 
             <Card>

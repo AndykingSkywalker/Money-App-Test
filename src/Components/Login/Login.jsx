@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Card, Col} from 'react-bootstrap';
+import background from "../../Images/TampaBackground.png";
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -20,10 +21,20 @@ const Login = () => {
         e.preventDefault();
         // Add your login logic here
     };
-
+  
     return (
+        <div >
+
+        <Col md={6} className="mx-auto">
+            <br/>
+
+            <Card className="login-card">
         <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formUsername">
+        <h2
+            className="mb-4 text-center"
+          >
+            Log In
+          </h2>            <Form.Group controlId="formUsername">
                 <Form.Label>Username</Form.Label>
                 <Form.Control
                     type="text"
@@ -47,10 +58,21 @@ const Login = () => {
                 </Form.Control.Feedback>
             </Form.Group>
 
-            <Button variant="primary" type="submit" href="/home">
-                Log In
-            </Button>
+            <Button style={{
+                 backgroundColor: '#a87388', 
+                 border: 'none',
+                 color: 'white',
+                 padding: '10px',
+                 textAlign: 'center',
+                 display: 'inline-block',
+                 fontSize: '14px',
+                 margin: '4px 2px',
+                 borderRadius: '10px',
+              }} type="submit" href="/home">Log In</Button>
         </Form>
+        </Card>
+        </Col>
+        </div>
     );
 };
 

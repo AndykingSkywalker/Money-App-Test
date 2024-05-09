@@ -54,7 +54,7 @@ const BudgetTool = () => {  const [salary, setSalary] = useState("");
     <div>
       <Row>
         <Col md={6}>
-          <Card>
+        <Card className="login-card">
             <Form>
               <Form.Group controlId="salary">
                 <Form.Label>Income</Form.Label>
@@ -154,7 +154,7 @@ const BudgetTool = () => {  const [salary, setSalary] = useState("");
             </Form>
           </Card>
           <br />
-          <Card>
+          <Card className="login-card">
           <Row>
         <Col md={8}>
           <Pie data={data} />
@@ -162,8 +162,8 @@ const BudgetTool = () => {  const [salary, setSalary] = useState("");
       </Row>
       </Card>
         </Col>
-        <Col md={6}>
-          <Card>
+        <Col md={5}>
+        <Card className="login-card">
             <Table striped bordered hover>
               <thead>
                 <tr>
@@ -202,12 +202,13 @@ const BudgetTool = () => {  const [salary, setSalary] = useState("");
                 </tr>
               </tbody>
             </Table>
+            Get financial help ! Book an appoitment with one of our specialist <Link to="/Booking">Book Now</Link>
+         <br />
+          <Link to="/savingsCalculator">Savings calculator</Link>
           </Card>
           
          
-         Get financial help ! Book an appoitment with one of our specialist <Link to="/Booking">Book Now</Link>
-         <br />
-          <Link to="/savingsCalculator">Savings calculator</Link>
+         
         </Col>
       </Row>
     </div>
