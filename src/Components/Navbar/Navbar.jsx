@@ -36,7 +36,7 @@ function NavigationBar() {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
               <Nav.Link href="/login">Login</Nav.Link>
-                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/Home">Home</Nav.Link>
                 <Nav.Link href="/Booking">Booking</Nav.Link>
                 <Nav.Link href="/budget">Budget Tool</Nav.Link>
                 <Nav.Link href="/expenses">Expenses Tracker</Nav.Link>
@@ -45,7 +45,7 @@ function NavigationBar() {
                 
                 <Nav.Link href="/MortgageCalculator">Mortgage Calculator</Nav.Link>
                 <Nav.Link href="/contactUs">Contact Us</Nav.Link>
-
+                
               <Nav.Link href="/videomessages">Video Messages</Nav.Link>
 
               </Nav>
