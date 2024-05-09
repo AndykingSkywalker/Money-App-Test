@@ -54,7 +54,7 @@ const BudgetTool = () => {  const [salary, setSalary] = useState("");
     <div>
       <Row>
         <Col md={6}>
-        <Card className="login-card" style={{  fontFamily: 'crimsonpro' }}>
+        <Card className="login-card" style={{  fontFamily: 'crimsonpro', backgroundColor: 'rgba(255, 255, 255, 0.91)' }}>
             <Form>
               <Form.Group controlId="salary">
                 <Form.Label>Income</Form.Label>
@@ -164,7 +164,7 @@ const BudgetTool = () => {  const [salary, setSalary] = useState("");
             </Form>
           </Card>
           <br />
-          <Card className="login-card" style={{  fontFamily: 'crimsonpro' }}>
+          <Card className="login-card" style={{  fontFamily: 'crimsonpro', backgroundColor: 'rgba(255, 255, 255, 0.91)' }}>
           <Row>
         <Col md={8}>
           <Pie data={data} />
@@ -173,7 +173,7 @@ const BudgetTool = () => {  const [salary, setSalary] = useState("");
       </Card>
         </Col>
         <Col md={5}>
-        <Card className="login-card" style={{  fontFamily: 'crimsonpro' }}>
+        <Card className="login-card" style={{  fontFamily: 'crimsonpro', backgroundColor: 'rgba(255, 255, 255, 0.91)' }}>
             <Table striped bordered hover >
               <thead>
                 <tr>

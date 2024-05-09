@@ -62,3 +62,6 @@ body, .roboto {
 /* .roboto {
   font-family: crimsonpro;
 } */
+.custom-progress-bar {
+  background-color: #B4738D; /* Replace with your desired hex color */
+}

@@ -28,7 +28,7 @@ const Login = () => {
         <Col md={6} className="mx-auto">
             <br/>
 
-            <Card className="login-card" style={{  fontFamily: 'crimsonpro' }}>
+            <Card className="login-card" style={{  fontFamily: 'crimsonpro', backgroundColor: 'rgba(255, 255, 255, 0.91)' }}>
         <Form onSubmit={handleSubmit}>
         <h2
             className="mb-4 text-center"

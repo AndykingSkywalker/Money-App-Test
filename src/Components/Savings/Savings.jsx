@@ -32,7 +32,7 @@ const Savings = () => {
                <Row>
         <Col md={6} className="mx-auto">
 
-        <Card className="login-card" style={{  fontFamily: 'crimsonpro' }}>
+        <Card className="login-card" style={{  fontFamily: 'crimsonpro', backgroundColor: 'rgba(255, 255, 255, 0.91)' }}>
             <Form>
                 <Form.Group controlId="monthlySavings">
                     <Form.Label>Monthly Savings Amount</Form.Label>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Form, Button, Table, Modal } from 'react-bootstrap';
+import { Container, Form, Button, Table, Modal, Card, Col} from 'react-bootstrap';
 import axios from 'axios';
 
 const TransactionsAdmin = () => {
@@ -82,6 +82,8 @@ const TransactionsAdmin = () => {
         <div>
             <Container>
                 <h1>Transactions Admin Page</h1>
+                <Card className="login-card" style={{  fontFamily: 'crimsonpro' }}>
+
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="formName"></Form.Group>
                     <Form.Label>Name:</Form.Label>
@@ -95,10 +97,21 @@ const TransactionsAdmin = () => {
                         <Form.Control type="text" value={price} onChange={handlePriceChange} />
                     </Form.Group>
                     <br />
-                    <Button variant="primary" type="submit">Create Transaction</Button>
+                    <Button style={{
+                 backgroundColor: '#a87388', 
+                 border: 'none',
+                 color: 'white',
+                 padding: '10px',
+                 textAlign: 'center',
+                 display: 'inline-block',
+                 fontSize: '14px',
+                 margin: '4px 2px',
+                 borderRadius: '10px',
+              }}  type="submit">Create Transaction</Button>
                 </Form>
+                </Card>
             </Container>
-            <Modal style={{color: "black"}} show={showModal} onHide={handleClose}>
+            <Modal style={{color: "black", fontFamily: 'crimsonpro'}} show={showModal} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Transaction Added</Modal.Title>
                 </Modal.Header>
@@ -110,9 +123,11 @@ const TransactionsAdmin = () => {
                 </Modal.Footer>
             </Modal>
             <br />
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
+            <Col md={6} className="mx-auto">
+
+            <Table striped bordered hover style={{  fontFamily: 'crimsonpro' }}>
+            <thead             className="mb-4 text-center">
+                    <tr >
                         <th>ID</th>
                         <th>Name</th>
                         <th>Category</th>
@@ -120,7 +135,7 @@ const TransactionsAdmin = () => {
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody  className="mb-4 text-center" >
                     {/* Map over the transactions array and render each transaction */}
                     {transactions.map((transaction) => (
                         <tr key={transaction.id}>
@@ -129,12 +144,15 @@ const TransactionsAdmin = () => {
                             <td>{transaction.category}</td>
                             <td>{transaction.price}</td>
                             <td>
-                            <Button variant="danger" onClick={() => handleDelete(transaction.id)}>Delete</Button>
+                            <Button style={{
+                    backgroundColor: '#FF7171',
+                  }} onClick={() => handleDelete(transaction.id)}>Delete</Button>
                         </td>
                         </tr>
                     ))}
                 </tbody>
             </Table>
+            </Col>
         </div>
     );
 };

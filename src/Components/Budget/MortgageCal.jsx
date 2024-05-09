@@ -43,7 +43,7 @@ const MortgageCal = () => {
                     <Row>
         <Col md={6} className="mx-auto">
 
-        <Card className="login-card" style={{  fontFamily: 'crimsonpro' }}>
+        <Card className="login-card" style={{  fontFamily: 'crimsonpro', backgroundColor: 'rgba(255, 255, 255, 0.91)' }}>
             <h1>Mortgage Calculator</h1>
             <div className="form-group">
                 <label htmlFor="mortgageBalance">Mortgage Balance:</label>
@@ -94,6 +94,7 @@ const MortgageCal = () => {
 
         </Col>
         <br/>
+        
         <Table striped bordered hover style={{  fontFamily: 'crimsonpro' }}>
         <thead             className="mb-4 text-center">
                     <tr>
@@ -116,7 +117,7 @@ const MortgageCal = () => {
                     ))}
                 </tbody>
             </Table>
-            <Card style={{  fontFamily: 'crimsonpro' }}>
+            <Card style={{  fontFamily: 'crimsonpro', backgroundColor: 'rgba(255, 255, 255, 0.91)' }}>
             <a href="https://www.halifax.co.uk/mortgages/mortgage-calculator.html#mortgagecalc" target="_blank" rel="noopener noreferrer">Overpayment Calculator</a>
             <br />
 <b> Click <a href="https://www.experianidentityservice.co.uk/Register#_ga=2.252805002.2079425939.1715165846-1303040810.1715165846&_gac=1.186972506.1715165846.Cj0KCQjwxeyxBhC7ARIsAC7dS3-c17CFI7A7YotIkZlynxTUlAH9s_ayzTsKBX6xS2C9bzUREuDSbfYaAheuEALw_wcB">here</a> to Check   Your Credit Score for free </b>

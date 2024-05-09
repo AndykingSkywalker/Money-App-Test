@@ -150,7 +150,7 @@ const Booking = () => {
         <Row>
         <Col md={6} className="mx-auto">
 
-        <Card className="login-card" style={{  fontFamily: 'crimsonpro' }}>
+        <Card className="login-card" style={{  fontFamily: 'crimsonpro', backgroundColor: 'rgba(255, 255, 255, 0.91)'}} >
         <h4
             className="mb-4 text-center"
           >
@@ -271,7 +271,7 @@ const Booking = () => {
       )}
       <br/>
         <Col md={6} className="mx-auto">
-      <Table striped bordered hover style={{  fontFamily: 'crimsonpro' }}>
+      <Table striped bordered hover style={{  fontFamily: 'crimsonpro',  }}>
         <thead             className="mb-4 text-center"
 >
           <tr>
@@ -301,7 +301,9 @@ const Booking = () => {
                 <td>{formattedDate}</td>
                 <td>{booking.time}</td>
                 <td>
-                  <Button variant="danger" onClick={() => handleDelete(index)}>
+                  <Button style={{
+                    backgroundColor: '#FF7171',
+                  }} onClick={() => handleDelete(index)}>
                     Delete
                   </Button>
                 </td>

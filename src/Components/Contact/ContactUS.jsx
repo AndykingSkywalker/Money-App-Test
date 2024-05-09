@@ -22,7 +22,7 @@ const ContactUs = () => {
         <div>
         <Col md={6} className="mx-auto">
 
-        <Card className="login-card" style={{  fontFamily: 'crimsonpro' }}>
+        <Card className="login-card" style={{  fontFamily: 'crimsonpro', backgroundColor: 'rgba(255, 255, 255, 0.91)'}}>
         <h4
             className="mb-4 text-center"
           >

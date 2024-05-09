@@ -35,7 +35,7 @@ const HomePage = () => {
         <div>
             <br />
             <Container className="balance-container" style={{ width: '50%' }}>
-                <Card style={{ fontFamily: 'crimsonpro' }} className='App' >
+                <Card style={{ fontFamily: 'crimsonpro', backgroundColor: 'rgba(255, 255, 255, 0.91)' }} className='App' >
                     <Card.Body>
                         <Card.Title>Account Balance</Card.Title>
                         {/* Add your account balance component here */}
@@ -46,7 +46,7 @@ const HomePage = () => {
             <Container className="home-page d-flex justify-content-center text-center " style={{ maxHeight: "1000px", maxWidth: "1000px" }}>
                 <br />
                 {randomItem && (
-                    <Card className="tile-container" style={{ width: '50%', fontFamily: 'crimsonpro' }}>
+                    <Card className="tile-container" style={{ width: '50%', fontFamily: 'crimsonpro', backgroundColor: 'rgba(255, 255, 255, 0.91)' }}>
                         <Card.Body>
                             <Card.Title onClick={() => setExpanded(!expanded)}>Item of the day</Card.Title>
                             {expanded && (
@@ -66,13 +66,13 @@ const HomePage = () => {
                     </Card>
                 )}
 <Container className="transaction-container" style={{ width: '50%' }}>
-<Card style={{ fontFamily: 'crimsonpro' }}>
+<Card style={{ fontFamily: 'crimsonpro', backgroundColor: 'rgba(255, 255, 255, 0.91)' }}>
         <Card.Body>
             <Card.Title>Transactions</Card.Title>
             <ListGroup variant="flush">
                 {transactions.map((transaction, index) => (
                     <ListGroup.Item key={index}>
-                        Transaction {index + 1}: Name: {transaction.name}, Category: {transaction.category}, Price: £{transaction.price}
+                       {transaction.name},  {transaction.category}, £{transaction.price}
                     </ListGroup.Item>
                 ))}
             </ListGroup>
