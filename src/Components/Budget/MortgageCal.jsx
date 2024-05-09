@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import {
+  
+    Card,
+    Row,
+    Col,
+    Button,
+    Table
+  } from "react-bootstrap";
 const MortgageCal = () => {
     const [mortgageBalance, setMortgageBalance] = useState(0);
     const [mortgageTerm, setMortgageTerm] = useState(0);
@@ -33,6 +40,10 @@ const MortgageCal = () => {
 
     return (
         <div className="container">
+                    <Row>
+        <Col md={6} className="mx-auto">
+
+        <Card className="login-card">
             <h1>Mortgage Calculator</h1>
             <div className="form-group">
                 <label htmlFor="mortgageBalance">Mortgage Balance:</label>
@@ -64,11 +75,27 @@ const MortgageCal = () => {
                     onChange={(e) => setMortgageInterest(parseFloat(e.target.value))}
                 />
             </div>
-            <button className="btn btn-primary" onClick={calculateMortgage}>
+            <br />
+            <Button style={{
+                 backgroundColor: '#a87388', 
+                 border: 'none',
+                 color: 'white',
+                 padding: '10px',
+                 textAlign: 'center',
+                 display: 'inline-block',
+                 fontSize: '14px',
+                 margin: '4px 2px',
+                 borderRadius: '10px',
+              }}  onClick={calculateMortgage}>
                 Calculate
-            </button>
-            <table className="table mt-4">
-                <thead>
+            </Button>
+        </Card>
+        <br/>
+
+        </Col>
+        <br/>
+        <Table striped bordered hover>
+        <thead             className="mb-4 text-center">
                     <tr>
                         <th>Yearly</th>
                         <th>Payment</th>
@@ -88,12 +115,14 @@ const MortgageCal = () => {
                         </tr>
                     ))}
                 </tbody>
-            </table>
+            </Table>
+            <Card>
             <a href="https://www.halifax.co.uk/mortgages/mortgage-calculator.html#mortgagecalc" target="_blank" rel="noopener noreferrer">Overpayment Calculator</a>
             <br />
 <b> Click <a href="https://www.experianidentityservice.co.uk/Register#_ga=2.252805002.2079425939.1715165846-1303040810.1715165846&_gac=1.186972506.1715165846.Cj0KCQjwxeyxBhC7ARIsAC7dS3-c17CFI7A7YotIkZlynxTUlAH9s_ayzTsKBX6xS2C9bzUREuDSbfYaAheuEALw_wcB">here</a> to Check   Your Credit Score for free </b>
-        </div>
-    );
+</Card>
+        </Row>
+        </div>);
 };
 
 export default MortgageCal;
