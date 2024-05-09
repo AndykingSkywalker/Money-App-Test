@@ -53,8 +53,18 @@ const Savings = () => {
                         onChange={(e) => setInterestRate(parseFloat(e.target.value))}
                     />
                 </Form.Group>
-
-                <Button variant="primary" onClick={calculateSavings}>
+<br/>
+                <Button style={{
+                 backgroundColor: '#a87388', 
+                 border: 'none',
+                 color: 'white',
+                 padding: '10px',
+                 textAlign: 'center',
+                 display: 'inline-block',
+                 fontSize: '14px',
+                 margin: '4px 2px',
+                 borderRadius: '10px',
+              }}  onClick={calculateSavings}>
                     Calculate
                 </Button>
             </Form>

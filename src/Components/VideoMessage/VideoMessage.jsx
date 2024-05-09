@@ -64,7 +64,18 @@ const VideoMessage = () => {
     return (
         <Container>
         <Row className="justify-content-center mb-4">
-            <Button onClick={handleVideoRecording}>Record Video</Button>
+            <br/>
+        <Button style={{
+                 backgroundColor: '#a87388', 
+                 color: 'white',
+                 borderColor: "black",
+                 padding: '10px',
+                 textAlign: 'center',
+                 display: 'inline-block',
+                 fontSize: '14px',
+                 margin: '4px 2px',
+                 borderRadius: '10px',
+              }} onClick={handleVideoRecording}>Record Video</Button>
         </Row>
         <Row className="justify-content-center mb-4">
             {countdown !== null && <h2>Time remaining: {countdown}</h2>}
