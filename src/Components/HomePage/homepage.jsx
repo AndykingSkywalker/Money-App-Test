@@ -35,7 +35,7 @@ const HomePage = () => {
         <div>
             <br />
             <Container className="balance-container" style={{ width: '50%' }}>
-                <Card style={{ fontFamily: 'crimsonpro' }} >
+                <Card style={{ fontFamily: 'crimsonpro' }} className='App' >
                     <Card.Body>
                         <Card.Title>Account Balance</Card.Title>
                         {/* Add your account balance component here */}
