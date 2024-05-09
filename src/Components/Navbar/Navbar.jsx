@@ -11,6 +11,7 @@ import Logo from "../../Images/TAMPA.png"
 
 const StyledApp = styled.div`
   color: ${(props) => props.theme.fontColor};
+  background-image: ${(props) => props.theme.backgroundImage};
 `;
 
 function NavigationBar() {
@@ -66,7 +67,7 @@ function NavigationBar() {
                 <Nav.Link href="/videomessages">Video Messages</Nav.Link>
               </Nav>
 
-              <Nav.Link href="/contactUs">Contact Us <GrContact />
+              <Nav.Link style={{color: "black"}} href="/contactUs">Contact Us <GrContact />
 </Nav.Link>
 
               &emsp;               <Switch
