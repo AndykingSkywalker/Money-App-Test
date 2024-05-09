@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Form, Button, Table } from 'react-bootstrap';
+import { Container, Form, Button, Table, Modal } from 'react-bootstrap';
 import axios from 'axios';
 
 const TransactionsAdmin = () => {
@@ -7,6 +7,7 @@ const TransactionsAdmin = () => {
     const [category, setCategory] = useState('');
     const [price, setPrice] = useState('');
     const [transactions, setTransactions] = useState([]);
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         const GetTransactions = async () => {
@@ -40,6 +41,10 @@ const TransactionsAdmin = () => {
             const response = await axios.post('http://localhost:8085/transaction/add', newTransaction);
             if (response.data && response.data.id) {
                 setTransactions([...transactions, response.data]);
+                setShowModal(true);
+                setName('');
+                setCategory('');
+                setPrice('');
                 console.log("posted");
                 console.log(response.data);
             } else {
@@ -49,6 +54,8 @@ const TransactionsAdmin = () => {
             console.error(error);
         }
     };
+
+    const handleClose = () => setShowModal(false);
 
     const handleNameChange = (e) => {
         setName(e.target.value);
@@ -91,6 +98,17 @@ const TransactionsAdmin = () => {
                     <Button variant="primary" type="submit">Create Transaction</Button>
                 </Form>
             </Container>
+            <Modal style={{color: "black"}} show={showModal} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Transaction Added</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Transaction Added Successfully</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
             <br />
             <Table striped bordered hover>
                 <thead>
