@@ -146,7 +146,17 @@ const BudgetTool = () => {  const [salary, setSalary] = useState("");
               </Row>
               <Row className="mt-3">
                 <Col className="text-center">
-                  <Button variant="primary" onClick={calculateSurplus}>
+                <Button style={{
+                 backgroundColor: '#a87388', 
+                 border: 'none',
+                 color: 'white',
+                 padding: '10px',
+                 textAlign: 'center',
+                 display: 'inline-block',
+                 fontSize: '14px',
+                 margin: '4px 2px',
+                 borderRadius: '10px',
+              }} onClick={calculateSurplus}>
                     Calculate Surplus
                   </Button>
                 </Col>
