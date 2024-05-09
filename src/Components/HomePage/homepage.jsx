@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Card } from 'react-bootstrap';
+import { Container, Card, ListGroup } from 'react-bootstrap';
 import axios from 'axios';
 
 const HomePage = () => {
@@ -65,17 +65,21 @@ const HomePage = () => {
                         </Card.Body>
                     </Card>
                 )}
-                <Container className="transaction-container" style={{ width: '50%' }}>
-                    <Card>
-                        <Card.Body>
-                            <Card.Title>Transactions</Card.Title>
-                            <Card.Text>{transactions.name}</Card.Text>
-                            <Card.Text>{transactions.category}</Card.Text>
-                            <Card.Text>{transactions.price}</Card.Text>
-                        </Card.Body>
-                    </Card>
-                </Container>
-            </Container>
+<Container className="transaction-container" style={{ width: '100%' }}>
+    <Card>
+        <Card.Body>
+            <Card.Title>Transactions</Card.Title>
+            <ListGroup variant="flush">
+                {transactions.map((transaction, index) => (
+                    <ListGroup.Item key={index}>
+                        Transaction {index + 1}: Name: {transaction.name}, Category: {transaction.category}, Price: £{transaction.price}
+                    </ListGroup.Item>
+                ))}
+            </ListGroup>
+        </Card.Body>
+    </Card>
+</Container>
+</Container>
         </div>
     );
 };

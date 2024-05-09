@@ -20,14 +20,21 @@ const TransactionsAdmin = () => {
         };
         GetTransactions();}, []);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-    
-        const newTransaction = {
-            name,
-            category,
-            price
-        };
+        const handleSubmit = async (e) => {
+            e.preventDefault();
+        
+            let finalPrice = parseFloat(price);
+            if (!isNaN(finalPrice)) {
+                finalPrice = finalPrice.toFixed(2);
+            } else {
+                finalPrice = '';
+            }
+        
+            const newTransaction = {
+                name,
+                category,
+                price: finalPrice
+            };
     
         try {
             const response = await axios.post('http://localhost:8085/transaction/add', newTransaction);
