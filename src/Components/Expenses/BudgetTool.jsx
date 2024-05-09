@@ -164,7 +164,7 @@ const BudgetTool = () => {  const [salary, setSalary] = useState("");
         </Col>
         <Col md={5}>
         <Card className="login-card" style={{  fontFamily: 'crimsonpro' }}>
-            <Table striped bordered hover>
+            <Table striped bordered hover >
               <thead>
                 <tr>
                   <th>Expense Category</th>

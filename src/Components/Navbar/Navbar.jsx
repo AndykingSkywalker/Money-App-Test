@@ -73,8 +73,8 @@ function NavigationBar() {
               &emsp;               <Switch
               onChange={themeToggler}
               checked={theme === 'dark'}
-              onColor="#86d3ff"
-              onHandleColor="#2693e6"
+              onColor="#2C041C"
+              onHandleColor="#B4738D "
               handleDiameter={30}
               uncheckedIcon={false}
               checkedIcon={false}
