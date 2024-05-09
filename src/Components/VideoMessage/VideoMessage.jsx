@@ -75,6 +75,7 @@ const VideoMessage = () => {
                  fontSize: '14px',
                  margin: '4px 2px',
                  borderRadius: '10px',
+                  fontFamily: 'crimsonpro'
               }} onClick={handleVideoRecording}>Record Video</Button>
         </Row>
         <Row className="justify-content-center mb-4">

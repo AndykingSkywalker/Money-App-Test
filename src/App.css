@@ -42,6 +42,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+body, .roboto {
+  font-family: 'crimsonpro', sans-serif;
+}
 .login-card {
   margin-top: 2rem;
   padding: 2rem;
@@ -51,4 +54,11 @@ body {
 }
 
 
+@font-face {
+  font-family: 'crimsonpro';
+  src: url('../public/ConsolaMono-Bold.ttf') format('truetype');
+}
 
+/* .roboto {
+  font-family: crimsonpro;
+} */

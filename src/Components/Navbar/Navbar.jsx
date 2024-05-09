@@ -28,6 +28,7 @@ function NavigationBar() {
   const themeToggler = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
+  
 
   if (location.pathname === "/login") {
     return null;
@@ -37,14 +38,13 @@ function NavigationBar() {
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
       <StyledApp>
-        <Navbar bg="light" expand="lg" >
-          <Container               checked={theme === 'dark'}
+      <Navbar style={{ backgroundColor: '#B4738D', fontFamily: 'crimsonpro' }} expand="lg">          <Container               checked={theme === 'dark'}
 >
             <Navbar.Brand href="/">< img src={Logo} alt="logo" width="90" height="50"/></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="/login">Login</Nav.Link>
+                <Nav.Link className="crimsonpro" href="/login">Login</Nav.Link>
                 <Nav.Link href="/Home">Home</Nav.Link>
                 <Nav.Link href="/Booking">Booking</Nav.Link>
                 <NavDropdown title="Budget Planner" id="basic-nav-dropdown">

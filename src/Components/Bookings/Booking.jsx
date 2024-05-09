@@ -150,7 +150,7 @@ const Booking = () => {
         <Row>
         <Col md={6} className="mx-auto">
 
-        <Card className="login-card">
+        <Card className="login-card" style={{  fontFamily: 'crimsonpro' }}>
         <h4
             className="mb-4 text-center"
           >
@@ -271,7 +271,7 @@ const Booking = () => {
       )}
       <br/>
         <Col md={6} className="mx-auto">
-      <Table striped bordered hover>
+      <Table striped bordered hover style={{  fontFamily: 'crimsonpro' }}>
         <thead             className="mb-4 text-center"
 >
           <tr>

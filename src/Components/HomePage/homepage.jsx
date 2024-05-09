@@ -35,7 +35,7 @@ const HomePage = () => {
         <div>
             <br />
             <Container className="balance-container" style={{ width: '50%' }}>
-                <Card>
+                <Card style={{ fontFamily: 'crimsonpro' }} >
                     <Card.Body>
                         <Card.Title>Account Balance</Card.Title>
                         {/* Add your account balance component here */}
@@ -46,7 +46,7 @@ const HomePage = () => {
             <Container className="home-page d-flex justify-content-center text-center " style={{ maxHeight: "1000px", maxWidth: "1000px" }}>
                 <br />
                 {randomItem && (
-                    <Card className="tile-container" style={{ width: '50%' }}>
+                    <Card className="tile-container" style={{ width: '50%', fontFamily: 'crimsonpro' }}>
                         <Card.Body>
                             <Card.Title onClick={() => setExpanded(!expanded)}>Item of the day</Card.Title>
                             {expanded && (
@@ -65,8 +65,8 @@ const HomePage = () => {
                         </Card.Body>
                     </Card>
                 )}
-<Container className="transaction-container" style={{ width: '100%' }}>
-    <Card>
+<Container className="transaction-container" style={{ width: '50%' }}>
+<Card style={{ fontFamily: 'crimsonpro' }}>
         <Card.Body>
             <Card.Title>Transactions</Card.Title>
             <ListGroup variant="flush">

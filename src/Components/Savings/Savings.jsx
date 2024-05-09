@@ -32,7 +32,7 @@ const Savings = () => {
                <Row>
         <Col md={6} className="mx-auto">
 
-        <Card className="login-card">
+        <Card className="login-card" style={{  fontFamily: 'crimsonpro' }}>
             <Form>
                 <Form.Group controlId="monthlySavings">
                     <Form.Label>Monthly Savings Amount</Form.Label>
@@ -73,7 +73,7 @@ const Savings = () => {
             </Row>
             <Col md={6} className="mx-auto">
 <br />
-            <Table striped bordered hover>
+            <Table striped bordered hover style={{  fontFamily: 'crimsonpro' }}>
             <thead             className="mb-4 text-center">
                     <tr>
                         <th>Month</th>

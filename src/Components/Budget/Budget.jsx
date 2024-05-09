@@ -14,7 +14,7 @@ const Budget = () => {
 
     return (
         <Container>
-            <Card className="login-card">
+            <Card className="login-card" style={{  fontFamily: 'crimsonpro' }}>
 
             <Form>
             <h4
@@ -50,7 +50,7 @@ Budgeting Component          </h4>
             </Card>
             <br />
 
-            <Card>
+            <Card style={{  fontFamily: 'crimsonpro' }}>
                 <Card.Body>
                     <Card.Title>Disposable Income: £{disposableIncome}</Card.Title>
                     <ProgressBar now={savingsCompletion.toFixed(2)} label={`${savingsCompletion.toFixed(2)}%`} />
