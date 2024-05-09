@@ -174,7 +174,7 @@ const Booking = () => {
                       value={specialism}
                       onChange={(e) => setSpecialism(e.target.value)}
                     >
-                      <option value="">Select a specialism </option>
+                      <option selected hidden value="">Select a specialism </option>
                       {specialisms.map((specialism) => (
                         <option key={specialism} value={specialism}>
                           {specialism}
@@ -192,7 +192,7 @@ const Booking = () => {
                       value={selectedSpecialist}
                       onChange={(e) => setSelectedSpecialist(e.target.value)}
                     >
-                      <option value="">Select a specialist </option>
+                      <option selected hidden value="">Select a specialist </option>
                       {specialists.map((specialist) => (
                         <option key={specialist} value={specialist}>
                           {specialist}
@@ -218,7 +218,7 @@ const Booking = () => {
               <Form.Group className="mb-3">
                 <Form.Label>Time:</Form.Label>
                 <Form.Select value={time} onChange={handleTimeChange}>
-                  <option value="">Select a time</option>
+                  <option selected hidden value="">Select a time</option>
                   {getAvailableTimes(date).map((time, index) => (
                     <option key={index} value={time}>
                       {time}
